@@ -1,48 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-<body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="grav-styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <title>~Gravatrips~</title>
+</head>
+
+<body onload="createGrid()">
   <h1>Gravatrips</h1>
   <!-- going to be able to grabe this later to change -->
   <div id="game-info">
     Players Turn
   </div>
-
-  <table>
-    <thead>
-      <tr id="gameboard">
-        <!-- these are optional if we want to have them as them as the pieces before they drop -->
-        <td><button onclick="">Drop</button></td>
-        <td><button onclick="">Drop</button></td>
-        <td><button onclick="">Drop</button></td>
-        <td><button onclick="">Drop</button></td>
-        <td><button onclick="">Drop</button></td>
-        <td><button onclick="">Drop</button></td>
-      </tr>
-    </thead>
-    <table>
-
-    </table>
-    
-    <!-- This is an older way to  have the board being generated -->
-
-    <script>
-      //To make the code much more compact, javascript will actually be used to write the code for the game board
-
-      for (let row = 0; row <= 5; row++) {
-        /*document.writeln() function will write HTML code to the browser.  If you "inspect" this page after the browser has
-        rendered the page, you will see a bunch of HTML
-        write the start of the table row tag
-        */
-        document.writeln("<tr>");
-        for (let col = 0; col <= 6; col++) {
-          //write each table data element - with the row and col variables in the ID so it can be accessed later.
-          document.writeln("<td id='square" + row + "," + col + "' class='board-square'></td>");
-        }
-        //write the closing table row tag.
-        document.writeln("</tr>");
-      };
-    </script>
-  </table>
-
+  <!-- made an id so that im able to refernce this in js to add rows -->
+  <table id="myTable"></table>
 
   <script type="text/javascript" src="main.js"> </script>
 </body>
