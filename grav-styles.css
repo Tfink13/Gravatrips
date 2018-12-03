@@ -1,0 +1,8 @@
+.board-square {
+  height: 90px;
+  width: 90px;
+  border: 5px solid black;
+}
+div#game-info {
+  text-align: center;
+}

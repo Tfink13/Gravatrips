@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="grav-styles.css">
-    <title>Gravatrips</title>
-  </head>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="grav-styles.css">
+  <title>~Gravatrips~</title>
+</head>
+
+<body>
   <h1>Gravatrips</h1>
+  <!-- going to be able to grabe this later to change -->
+  <div id="game-info">
+    Players Turn
+  </div>
+
+  <table>
+    <thead>
+      <tr id="gameboard">
+        <td><button onclick="">Drop</button></td>
+        <td><button onclick="">Drop</button></td>
+        <td><button onclick="">Drop</button></td>
+        <td><button onclick="">Drop</button></td>
+        <td><button onclick="">Drop</button></td>
+        <td><button onclick="">Drop</button></td>
+      </tr>
+    </thead>
+    <table>
+
+    </table>
+    <script>
+      //To make the code much more compact, javascript will actually be used to write the code for the game board
+
+      for (let row = 0; row <= 5; row++) {
+        /*document.writeln() function will write HTML code to the browser.  If you "inspect" this page after the browser has
+        rendered the page, you will see a bunch of HTML
+        write the start of the table row tag
+        */
+        document.writeln("<tr>");
+        for (let col = 0; col <= 6; col++) {
+          //write each table data element - with the row and col variables in the ID so it can be accessed later.
+          document.writeln("<td id='square" + row + "," + col + "' class='board-square'></td>");
+        }
+        //write the closing table row tag.
+        document.writeln("</tr>");
+      };
+    </script>
+  </table>
 
 
+  <script type="text/javascript" src="main.js"> </script>
+</body>
 
-
-  <script type="text/javascript" src="main.js">
-
-  </script>
-  <body>
-
-  </body>
 </html>

@@ -1,0 +1,22 @@
+{
+  "name": "gravatrips",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tfink13/Gravatrips.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tfink13/Gravatrips/issues"
+  },
+  "homepage": "https://github.com/Tfink13/Gravatrips#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
