@@ -19,7 +19,7 @@ describe('Winner function', () => {
 });
 
 describe('Instruction Function', () => {
-  test('Instructions popup in the Dom', () => {
-    expect(instructions()).toBe(false)
+  test('Instructions popup on the window', () => {
+    expect(instructions()).toBe()
   });
 });
