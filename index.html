@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Gravatrips</title>
-    <link href="grav-styles.css" rel="stylesheet" type="text/css">
-    <script defer src="main.js"></script>
-  </head>
-  <body>
-    <div class="popup" onclick="instructions()">Click me for Instructions!
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="grav-styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <title>~Gravatrips~</title>
+</head>
+
+<body>
+  <h1>Gravatrips</h1>
+      <div class="popup" onclick="instructions()">Click me for Instructions!
       <span class="popuptext" id="instructionPopup">
         The board consists of 6 rows and 7 columns and 42 total spaces on the board.
         <br><br>
@@ -18,5 +20,13 @@
         If you get 4 consecutive in a row, column or in a diagonal you win the game. If this does not happen, the game will end up being a tie.
       </span>
     </div>
-  </body>
+  <!-- going to be able to grabe this later to change -->
+  <div id="game-info">
+    Players Turn
+  </div>
+  <!-- made an id so that im able to refernce this in js to add rows -->
+  <table></table>
+
+  <script type="text/javascript" defer src="main.js"> </script>
+</body>
 </html>
