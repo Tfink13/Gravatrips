@@ -1,6 +1,3 @@
-
-
-
 let grid = []; // making a two dimensional array (x,y)
 
 const startGame = () => {
@@ -44,9 +41,6 @@ const drawBoard = () => {
 };
 
 
-
-
-
 //Function for the Win
 const check = (position1, position2, position3, position4) => {
   return ((position1 != 0) && (position1 == position2) && (position1 == position3) && (position1 == position4));
@@ -88,13 +82,8 @@ const checkForWinner = (win) => {
   return 'No Winner Yet';
   //If there is no winner yet it will just be 0 until there is a winner
 };
-//This just a test case to see if it actually works
-x = [
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-];
-console.log(checkForWinner(x));
+
+module.exports = {
+  checkForWinner,
+  check,
+};
