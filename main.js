@@ -1,3 +1,52 @@
+
+
+
+let grid = []; // making a two dimensional array (x,y)
+
+const startGame = () => {
+  resetBoard();
+  drawBoard();
+};
+// When the window is loaded the functions within the startGame, are ran first
+window.onload = startGame;
+
+/*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
+const resetBoard = () => {
+  grid = [
+      [null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null],
+      [null, null, null, null, null, null, null],
+    ]};
+
+
+const drawBoard = () => {
+  // grabbing table element
+  const tableElements = document.querySelector('table');
+  // iterate through rows
+  grid.forEach((row, coordY) => {
+    // creating tr element
+    const rowElements = document.createElement('tr');
+    // iterate through column in rows
+    row.forEach((col, coordX) => {
+      // and create a table cell element
+      const colElements = document.createElement('td');
+      // storing coordinates for the cells
+      const cellCoords = [coordX, coordY];
+      // adding cells to rows
+      rowElements.appendChild(colElements);
+    });
+    // add the row to the table
+    tableElements.appendChild(rowElements);
+  });
+};
+
+
+
+
+
 //Function for the Win
 const check = (position1, position2, position3, position4) => {
   return ((position1 != 0) && (position1 == position2) && (position1 == position3) && (position1 == position4));
@@ -46,28 +95,6 @@ x = [
   [0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0]
+  [0, 0, 0, 0, 0, 0, 0],
 ];
 console.log(checkForWinner(x));
-
-
-// function that builds a grid in the "container"
-const createGrid = () => {
-  for (let rows = 0; rows <= 1; rows++) { // the two for loops are going to iterate through the rows and columns
-    for (let col = 0; col <= 2; col++) { //
-      let table = document.getElementById("myTable");
-      let row = table.insertRow(0);
-      let cell1 = row.insertCell(0);
-      let cell2 = row.insertCell(1);
-      let cell3 = row.insertCell(2);
-      let cell4 = row.insertCell(3);
-      let cell5 = row.insertCell(4);
-      let cell6 = row.insertCell(5);
-    }
-  }
-};
-
-
-export.module {
-
-}
