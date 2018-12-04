@@ -83,7 +83,15 @@ const checkForWinner = (win) => {
   //If there is no winner yet it will just be 0 until there is a winner
 };
 
+// When the user clicks on div, open the popup
+const instructions = () => {
+    const popup = document.getElementById("instructionPopup");
+    popup.classList.toggle("showInstructions");
+}
+
 module.exports = {
   checkForWinner,
   check,
+  instructions,
 };
+
