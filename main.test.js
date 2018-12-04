@@ -1,22 +1,18 @@
-
-
-
-
-
 const {
-  sum,
+  checkForWinner,
+  check,
 } = require('./main');
 
+describe('Winner function', () => {
+  test('To see if when you get four consecutive in a column you win', () => {
+    expect(check()).toBe(true)
+  });
 
-describe('Sum Function', () => {
+  test('To see if when you get four consecutive in a row you win', () => {
+    expect(check()).toBe(true)
+  });
 
-  test('Adds 2 and 3 to get 5', () => {
-    expect(sum(2, 3)).toBe(5);
-  })
+  test('To see if when you get four consecutive in a diagonal you win', () => {
+    expect(check()).toBe(true)
+  });
 });
-
-describe('Begin Game Function', () => {
-  test('Defines if the game has started or not', () => {
-    expect(beginGame(true))
-  })
-})
