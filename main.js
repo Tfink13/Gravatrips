@@ -39,25 +39,15 @@ const checkForWinner = (win) => {
     return 'No Winner Yet';
     //If there is no winner yet it will just be 0 until there is a winner
 };
-/*
-module.exports = {
-  checkForWinner,
-  check,
-};
-*/
-//This just a test case to see if it actually works
-/*
-x =[ [0, 0, 0, 0, 0, 0, 0],
-     [0, 0, 0, 0, 0, 0, 0],
-     [0, 0, 0, 0, 0, 0, 0],
-     [0, 0, 0, 0, 0, 0, 1],
-     [0, 0, 0, 0, 0, 0, 1],
-     [0, 0, 0, 0, 0, 0, 1] ];
-console.log(checkForWinner(x));
-*/
 
 // When the user clicks on div, open the popup
 const instructions = () => {
-    let popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
+    const popup = document.getElementById("instructionPopup");
+    popup.classList.toggle("showInstructions");
 }
+
+module.exports = {
+  checkForWinner,
+  check,
+  instructions,
+};

@@ -1,6 +1,7 @@
 const {
   checkForWinner,
   check,
+  instructions,
 } = require('./main');
 
 describe('Winner function', () => {
@@ -14,5 +15,11 @@ describe('Winner function', () => {
 
   test('To see if when you get four consecutive in a diagonal you win', () => {
     expect(check()).toBe(true)
+  });
+});
+
+describe('Instruction Function', () => {
+  test('Instructions popup in the Dom', () => {
+    expect(instructions()).toBe(false)
   });
 });
