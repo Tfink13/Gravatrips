@@ -27,13 +27,14 @@ const drawBoard = () => {
     // creating tr element
     const rowElements = document.createElement('tr');
     // iterate through column in rows
-    row.forEach((col, coordX) => {
+    row.forEach((cell, coordX) => {
       // and create a table cell element
-      const colElements = document.createElement('td');
+      const cellElements = document.createElement('td');
       // storing coordinates for the cells
-      const cellCoords = [coordX, coordY];
+      const cellCoordinates = [coordX, coordY];
+      cellElements.className = 'outer'
       // adding cells to rows
-      rowElements.appendChild(colElements);
+      rowElements.appendChild(cellElements);
     });
     // add the row to the table
     tableElements.appendChild(rowElements);
@@ -88,10 +89,10 @@ const instructions = () => {
     const popup = document.getElementById("instructionPopup");
     popup.classList.toggle("showInstructions");
 }
-
+/*
 module.exports = {
   checkForWinner,
   check,
   instructions,
 };
-
+*/
