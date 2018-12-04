@@ -1,4 +1,5 @@
 const {
+  createGrid,
   checkForWinner,
   check,
 } = require('./main');
@@ -16,3 +17,10 @@ describe('Winner function', () => {
     expect(check()).toBe(true)
   });
 });
+  
+describe('Generate Board Function', () => {
+  test('to check if the board is being created', () => {
+    expect(createGrid()).toBe(createGrid());
+  });
+});
+
