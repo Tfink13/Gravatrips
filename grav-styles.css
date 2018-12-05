@@ -9,13 +9,13 @@ html {
 section {
   width: 50%;
   margin: 0 auto;
-} 
+}
 h1 {
   font-family: 'Bungee Shade', cursive;
   text-align: center;
   font-size: 40pt;
   padding: 5px;
-}
+} 
 
 
 div#message {
