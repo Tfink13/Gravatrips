@@ -4,18 +4,24 @@
 
 html {
   background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+  border: 10px solid black;
 }
-
+section {
+  width: 50%;
+  margin: 0 auto;
+}
 h1 {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Bungee Shade', cursive;
   text-align: center;
   font-size: 40pt;
-  padding: 20px;
+  padding: 5px;
 }
 
-div {
-  position: absolute;
-  font-size: 1.5em;
+
+div#message {
+  text-align: center;
+font-size: 30pt;
+font-family: 'Bungee', cursive;
 }
 
 div#game-info {
@@ -24,9 +30,11 @@ div#game-info {
 }
 
 table {
-  width: 50%;
+  width: 100%;
   border-radius: 22px;
   margin: 0 auto;
+  margin-bottom: 150px;
+  margin-top: 60px;
   background-color: #4193D1;
   box-shadow: 0 0 20px 6px #ff5722;
 }
@@ -35,7 +43,7 @@ td:hover {
   background-color: #f5f5f5;
 }
 
-table tr td.outer {
+table tr td.inner-circle {
   height: 115px;
   border: 1px solid black;
   border-radius: 50%;
@@ -43,31 +51,34 @@ table tr td.outer {
 }
 
 /* Popup container - can be anything you want */
-.popup {
+div.popup {
   position: absolute;
-  top: 90px;
-  left: 60px;
+  display: inline;
+  top: 60px;
+  left: 15px;
   cursor: pointer;
+  font-size: 26pt;
   opacity: 0.8;
+  border: 5px double #ed6943;
+  border-radius: 8px;
+  background-color: #0494d7;
+  text-shadow: 0 0 .1px black;
 }
 
 /* The actual popup */
-.popup .popuptext {
+.popuptext {
   visibility: hidden;
   width: 360px;
-  background-color: lightgrey;
   color: #000;
-  text-align: justify;
-  border-radius: 10px;
   padding: 15px;
   position: absolute;
-  z-index: 1;
-  bottom: -1700%;
-  left: 70%;
-  margin-left: -175px;
 }
 
 /* Toggle this class - hide and show the popup */
 .popup .showInstructions {
   visibility: visible;
+  font-size: 30px;
+  top: 55px;
+  border-radius: 45px;
+  font-family: 'Orbitron', sans-serif;
 }
