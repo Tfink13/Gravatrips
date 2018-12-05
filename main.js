@@ -1,38 +1,74 @@
 let grid = []; // making a two dimensional array (x,y)
+// im putting turn in the global scope for my
+// start game function to reference that value
+let turn;
+
 
 const startGame = () => {
+  firstTurn();
   resetBoard();
   drawBoard();
 };
+
+// Creating a function to replace the setMessage function to a different string
+const setMessage = (msg) => {
+  document.getElementById('message').innerText = msg;
+};
+
+// making a function to determine whos first (x)
+const firstTurn = () => {
+  // defining the first play 1st move as x
+  turn = 'Player 1';
+  // created a message so that the player know x goes first
+  setMessage(turn + " get's to start!")
+};
+
+
+const switchTurn = () => {
+  if (turn == "Player 1") {
+    turn = "Player 2";
+    setMessage("It's " + turn + "'s turn");
+  } else {
+    turn = "Player 1";
+    setMessage("It's " + turn + "'s turn");
+  }
+};
+
+const nextMove = () => {
+  
+}
+
+
 // When the window is loaded the functions within the startGame, are ran first
 window.onload = startGame;
 
 /*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
 const resetBoard = () => {
   grid = [
-      [null, null, null, null, null, null, null],
-      [null, null, null, null, null, null, null],
-      [null, null, null, null, null, null, null],
-      [null, null, null, null, null, null, null],
-      [null, null, null, null, null, null, null],
-      [null, null, null, null, null, null, null],
-    ]};
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+  ]
+};
 
 
 const drawBoard = () => {
   // grabbing table element
-  const tableElements = document.querySelector('table');
+  let tableElements = document.querySelector('table');
   // iterate through rows
   grid.forEach((row, coordY) => {
     // creating tr element
-    const rowElements = document.createElement('tr');
+    let rowElements = document.createElement('tr');
     // iterate through column in rows
     row.forEach((cell, coordX) => {
       // and create a table cell element
-      const cellElements = document.createElement('td');
+      let cellElements = document.createElement('td');
       // storing coordinates for the cells
-      const cellCoordinates = [coordX, coordY];
-      cellElements.className = 'outer'
+      let cellCoordinates = [coordX, coordY];
+      cellElements.className = 'inner-circle';
       // adding cells to rows
       rowElements.appendChild(cellElements);
     });
@@ -40,6 +76,7 @@ const drawBoard = () => {
     tableElements.appendChild(rowElements);
   });
 };
+
 
 
 //Function for the Win
@@ -86,8 +123,9 @@ const checkForWinner = (win) => {
 
 // When the user clicks on div, open the popup
 const instructions = () => {
-    const popup = document.getElementById("instructionPopup");
-    popup.classList.toggle("showInstructions");
+  console.log('im here')
+  const popup = document.getElementById("instructionPopup");
+  popup.classList.toggle("showInstructions");
 }
 /*
 module.exports = {
