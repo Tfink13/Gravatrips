@@ -1,37 +1,21 @@
-/* Popup container - can be anything you want */
-.popup {
-    position: relative;
-    display: inline;
-    cursor: pointer;
+* {
+  box-sizing: border-box;
 }
 
-/* The actual popup */
-.popup .popuptext {
-    visibility: hidden;
-    width: 360px;
-    background-color: lightgrey;
-    color: #000;
-    text-align: justify;
-    border-radius: 10px;
-    padding: 15px;
-    position: absolute;
-    z-index: 1;
-    bottom: -1700%;
-    left: 70%;
-    margin-left: -175px;
+html {
+  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
-/* Toggle this class - hide and show the popup */
-.popup .showInstructions {
-    visibility: visible;
+
+h1 {
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+  font-size: 40pt;
+  padding: 20px;
 }
 
 div {
   position: absolute;
   font-size: 1.5em;
-
-h1 {
-  font-family: 'Indie Flower', cursive;
-  text-align: center;
 }
 
 div#game-info {
@@ -40,14 +24,50 @@ div#game-info {
 }
 
 table {
-  width: 75%;
-  background-color: tan;
-  align-items: center;
+  width: 50%;
+  border-radius: 22px;
+  margin: 0 auto;
+  background-color: #4193D1;
+  box-shadow: 0 0 20px 6px #ff5722;
 }
+
 td:hover {
   background-color: #f5f5f5;
 }
-td {
+
+table tr td.outer {
   height: 115px;
   border: 1px solid black;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Popup container - can be anything you want */
+.popup {
+  position: absolute;
+  top: 90px;
+  left: 60px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 360px;
+  background-color: lightgrey;
+  color: #000;
+  text-align: justify;
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  z-index: 1;
+  bottom: -1700%;
+  left: 70%;
+  margin-left: -175px;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .showInstructions {
+  visibility: visible;
 }
