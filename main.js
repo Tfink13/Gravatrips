@@ -35,7 +35,7 @@ const switchTurn = () => {
 };
 
 const nextMove = () => {
-  
+
 }
 
 
@@ -123,10 +123,9 @@ const checkForWinner = (win) => {
 
 // When the user clicks on div, open the popup
 const instructions = () => {
-  console.log('im here')
   const popup = document.getElementById("instructionPopup");
   popup.classList.toggle("showInstructions");
-}
+};
 /*
 module.exports = {
   checkForWinner,
