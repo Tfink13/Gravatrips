@@ -30,13 +30,14 @@ div#game-info {
 }
 
 table {
-  width: 100%;
+  width: 800px;
+  margin: 0 auto;
   border-radius: 22px;
   margin: 0 auto;
   margin-bottom: 150px;
   margin-top: 60px;
-  background-color: #4193D1;
-  box-shadow: 0 0 20px 6px #ff5722;
+  background: yellow;
+  box-shadow: 0 0 20px 6px lightyellow;
 }
 
 td:hover {
@@ -61,7 +62,6 @@ div.popup {
   opacity: 0.8;
   border: 5px double #ed6943;
   border-radius: 8px;
-  background-color: #0494d7;
   text-shadow: 0 0 .1px black;
 }
 
