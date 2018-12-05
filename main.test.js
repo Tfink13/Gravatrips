@@ -24,5 +24,3 @@ describe('Instruction Function', () => {
     expect(instructions()).toBe()
   });
 });
-
-
