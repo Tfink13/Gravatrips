@@ -4,14 +4,9 @@
 
 html {
   background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-  margin: 0;
-  height: 100%;
   border: 10px solid black;
 }
-section {
-  width: 50%;
-  margin: 0 auto;
-}
+
 h1 {
   font-family: 'Bungee Shade', cursive;
   text-align: center;
@@ -19,30 +14,61 @@ h1 {
   padding: 5px;
 }
 
-
 div#message {
   text-align: center;
-font-size: 30pt;
-font-family: 'Bungee', cursive;
+  font-size: 30pt;
+  font-family: 'Bungee', cursive;
+  padding-bottom: 20px;
 }
 
 div#game-info {
   text-align: center;
   font-size: 30px;
 }
+#drop {
+  padding: 15px;
+}
+
+
+/* All the styleing for the button in table head */
+
+button.resizeBtn {
+  border-radius: 50%;
+  outline: none;
+  padding: 15px 25px;
+  font-size: 10px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #000080;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+button:hover {background-color: #AFEEEE}
+
+button:active {
+  background-color: #AFEEEE;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
+
+
+i.fa.fa-arrow-down {
+  font-size: 40pt;
+
+}
 
 table {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
   border-radius: 22px;
   background: yellow;
   box-shadow: 0 0 20px 6px lightyellow;
+
 }
 
-td:hover {
-  background-color: #f5f5f5;
-}
 
 table tr td.inner-circle {
   height: 115px;
@@ -50,7 +76,6 @@ table tr td.inner-circle {
   border-radius: 50%;
   background-color: white;
 }
-
 
 div.popup {
   position: absolute;
@@ -60,11 +85,10 @@ div.popup {
   cursor: pointer;
   font-size: 26pt;
   opacity: 0.8;
-  border: 5px double #ed6943;
+  border: 5px double #000080;
   border-radius: 8px;
   text-shadow: 0 0 .1px black;
 }
-
 
 .popuptext {
   visibility: hidden;
@@ -74,11 +98,11 @@ div.popup {
   position: absolute;
 }
 
-
 .popup .showInstructions {
   visibility: visible;
-  font-size: 30px;
-  top: 55px;
+  font-size: 26px;
+  top: 35px;
   border-radius: 45px;
   font-family: 'Orbitron', sans-serif;
+  padding-right: 80px;
 }
