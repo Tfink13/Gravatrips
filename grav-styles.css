@@ -17,16 +17,15 @@ h1 {
   padding: 5px;
 }
 
-
 div#message {
   text-align: center;
-font-size: 30pt;
-font-family: 'Bungee', cursive;
+  font-size: 30pt;
+  font-family: 'Bungee', cursive;
 }
 
 div#game-info {
-  text-align: center;
   font-size: 30px;
+  padding-top: 10px;
 }
 
 table {
@@ -51,7 +50,6 @@ table tr td.inner-circle {
   background-color: white;
 }
 
-/* Popup container - can be anything you want */
 div.popup {
   position: absolute;
   display: inline;
@@ -65,7 +63,7 @@ div.popup {
   text-shadow: 0 0 .1px black;
 }
 
-/* The actual popup */
+/
 .popuptext {
   visibility: hidden;
   width: 360px;
@@ -74,7 +72,6 @@ div.popup {
   position: absolute;
 }
 
-/* Toggle this class - hide and show the popup */
 .popup .showInstructions {
   visibility: visible;
   font-size: 30px;

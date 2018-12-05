@@ -127,9 +127,10 @@ const instructions = () => {
   const popup = document.getElementById("instructionPopup");
   popup.classList.toggle("showInstructions");
 }
-
+/*
 module.exports = {
   checkForWinner,
   check,
   instructions,
 };
+*/
