@@ -103,3 +103,116 @@ div.popup {
   font-family: 'Orbitron', sans-serif;
   padding-right: 80px;
 }
+
+.chip {
+  width: 110px;
+  height: 113px;
+  background-color: black;
+  border-radius: 50%;
+  margin-left: 14px;
+  /*
+  animation-name: chip-animation;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  z-index: 15;
+  opacity: .9;
+  */
+}
+
+@keyframes chip-animation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(701px);
+  }
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Orbitron';
+	top: 90px;
+	left: -265px;
+	animation-duration: 2.5s;
+}
+body {
+	background-color: darkgrey;
+	transition: all 6s ease;
+}
+
+@keyframes fadeOut {
+	0% {opacity: 1.0;}
+	100% {opacity: 0;}
+}
+
+.intro {
+	position: absolute;
+	transition: all 0.7s ease;
+	left: -265px;
+	top: 90px;
+	animation-duration: 2.3s;
+	animation-fill-mode: forwards;
+	color: black;
+}
+/*
+.chip {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 86px;
+	left: 30px;
+	background-color: red;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	transition: all 0.7s ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+*/
+@keyframes dropChip {
+	0% {transform: rotateX(360deg);}
+	60% {top: 60px; opacity: 1;}
+	100% {top: 800px; opacity: 0;}
+}
+
+.placed-chip {
+	margin: 0;
+	padding: 0;
+	background-color: red;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin-left: 9px;
+	transition: all 1.7s ease-in;
+	animation-duration: 1.15s;
+	animation-name: animate;
+}
+
+@keyframes animate {
+	from {transform: translateY(-610px);}
+	to {transform: translateY(0px);}
+}
+
+@keyframes one-chip {
+	from {transform: translateY(-510px);}
+	to {transform: translateY(0px);}
+}
+
+@keyframes two-chip {
+	from {transform: translateY(-410px);}
+	to {transform: translateY(0px);}
+}
+@keyframes three-chip {
+	from {transform: translateY(-310px);}
+	to {transform: translateY(0px);}
+}
+@keyframes four-chip {
+	from {transform: translateY(-210px);}
+	to {transform: translateY(0px);}
+}
+@keyframes five-chip {
+	from {transform: translateY(-110px);}
+	to {transform: translateY(0px);}
+}
