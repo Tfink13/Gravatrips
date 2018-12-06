@@ -25,13 +25,12 @@ div#game-info {
   text-align: center;
   font-size: 30px;
 }
+
 #drop {
   padding: 15px;
 }
 
-
 /* All the styleing for the button in table head */
-
 button.resizeBtn {
   border-radius: 50%;
   outline: none;
@@ -45,7 +44,9 @@ button.resizeBtn {
   box-shadow: 0 9px #999;
 }
 
-button:hover {background-color: #AFEEEE}
+button:hover {
+  background-color: #AFEEEE
+}
 
 button:active {
   background-color: #AFEEEE;
@@ -53,10 +54,8 @@ button:active {
   transform: translateY(2px);
 }
 
-
 i.fa.fa-arrow-down {
   font-size: 40pt;
-
 }
 
 table {
@@ -66,9 +65,7 @@ table {
   border-radius: 22px;
   background: yellow;
   box-shadow: 0 0 20px 6px lightyellow;
-
 }
-
 
 table tr td.inner-circle {
   height: 115px;
