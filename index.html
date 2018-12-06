@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="grav-styles.css">
   <link href="https://fonts.googleapis.com/css?family=Monoton|Bungee|Bungee+Shade|Orbitron|Indie+Flower" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>~Gravatrips~</title>
 </head>
 
 <body>
   <section>
 
-  <h1>Gravatrips</h1>
-      <div class="popup" onclick="instructions()">Click me for Instructions!
+    <h1>Gravatrips</h1>
+    <div class="popup" onclick="instructions()">Click me for Instructions!
       <span class="popuptext" id="instructionPopup">
         The board consists of 6 rows and 7 columns and 42 total spaces on the board.
         <br><br>
@@ -26,9 +28,48 @@
     <div id="message">
       Message Goes Here
     </div>
-  <!-- made an id so that im able to refernce this in js to add rows -->
-  <table></table>
+    <!-- made an id so that im able to refernce this in js to add rows -->
+    <table>
+      <thead align="center">
+        <tr>
+          <!-- Set up the buttons that will drop the pieces in to the column.  This could be programmatically generated like
+    the rows/columns below, but since it was just 7, it wouldn't really save code -->
+          <td id="drop">
+            <button class="resizeBtn">
+              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td id="drop">
+            <button class="resizeBtn">
+              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td id="drop">
+            <button class="resizeBtn">
+              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td id="drop">
+            <button class="resizeBtn">
+              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td id="drop">
+            <button class="resizeBtn">
+              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </button>
+          </td>
+          <td id="drop">
+            <button class="resizeBtn">
+              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </button>
+          </td>
+
+        </tr>
+      </thead>
+    </table>
   </section>
   <script type="text/javascript" defer src="main.js"> </script>
 </body>
+
 </html>

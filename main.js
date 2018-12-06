@@ -9,6 +9,8 @@ const startGame = () => {
   resetBoard();
   drawBoard();
 };
+// When the window is loaded the functions within the startGame, are ran first
+window.onload = startGame;
 
 // Creating a function to replace the setMessage function to a different string
 const setMessage = (msg) => {
@@ -34,13 +36,9 @@ const switchTurn = () => {
   }
 };
 
-const nextMove = () => {
-
-}
 
 
-// When the window is loaded the functions within the startGame, are ran first
-window.onload = startGame;
+
 
 /*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
 const resetBoard = () => {
