@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+#red-disk {
+  background-color: red;
+}
+
+#yellow-disk {
+  background-color: yellow;
+}
+
 html {
   background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
   border: 10px solid black;
@@ -25,53 +33,13 @@ div#game-info {
   text-align: center;
   font-size: 30px;
 }
-
-#drop {
-  padding: 15px;
-}
-
-/* All the styleing for the button in table head */
-button.resizeBtn {
-  border-radius: 50%;
-  outline: none;
-  padding: 15px 25px;
-  font-size: 10px;
-  cursor: pointer;
-  color: #fff;
-  background-color: #000080;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-
-button:hover {
-  background-color: #AFEEEE
-}
-
-button:active {
-  background-color: #AFEEEE;
-  box-shadow: 0 5px #666;
-  transform: translateY(2px);
-}
-
-i.fa.fa-arrow-down {
-  font-size: 40pt;
-}
-
 table {
-  width: 50%;
+  width: 53%;
   margin: auto;
-  margin-bottom: 30px;
   border-radius: 22px;
-  background: yellow;
+  background: blue;
   box-shadow: 0 0 20px 6px lightyellow;
-}
-
-table tr td.inner-circle {
-  height: 115px;
-  border: 1px solid black;
-  border-radius: 50%;
-  background-color: white;
+  transform: rotate(90deg);
 }
 
 div.popup {
@@ -103,3 +71,59 @@ div.popup {
   font-family: 'Orbitron', sans-serif;
   padding-right: 80px;
 }
+
+
+
+/* ALL THE FEATURES THAT WE WERENT ABLE IMPLEMENT :( */
+
+/*
+.dot {
+  height: 120px;
+  width: 115px;
+  border-radius: 50%;
+  background: blue;
+  position: absolute;
+}
+*/
+
+/* All the styleing for the button in table head
+button.resizeBtn {
+  border-radius: 50%;
+  outline: none;
+  padding: 15px 25px;
+  font-size: 10px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #000080;
+
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+button:hover {
+  background-color: #AFEEEE
+}
+
+button:active {
+  background-color: #AFEEEE;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
+
+*/
+/*
+table tr td.inner-circle {
+  height: 115px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: white;
+}
+*/
+/* this where thcolors of the players will be
+td {
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+*/

@@ -5,9 +5,9 @@ let turn;
 
 
 const startGame = () => {
-  firstTurn();
   resetBoard();
   drawBoard();
+  start();
 };
 // When the window is loaded the functions within the startGame, are ran first
 window.onload = startGame;
@@ -17,29 +17,49 @@ const setMessage = (msg) => {
   document.getElementById('message').innerText = msg;
 };
 
-// making a function to determine whos first (x)
-const firstTurn = () => {
-  // defining the first play 1st move as x
-  turn = 'Player 1';
-  // created a message so that the player know x goes first
-  setMessage(turn + " get's to start!")
-};
 
 
 const switchTurn = () => {
-  if (turn == "Player 1") {
-    turn = "Player 2";
+  if (turn == "Red") {
+    turn = "Yellow";
+
     setMessage("It's " + turn + "'s turn");
   } else {
-    turn = "Player 1";
+    turn = "Red";
     setMessage("It's " + turn + "'s turn");
   }
 };
 
 
 
+let playerOne = true;
 
+const start = function() {
+  for (let i = 0; i < 42; i++) {
+    const disc = document.createElement("div");
+    disc.className = 'spacing'
+    disc.style.cssFloat = "left";
+    disc.style.width = "100px";
+    disc.style.height = disc.style.width;
+    disc.style.backgroundColor = "white";
+    disc.style.borderRadius = "100%";
+    disc.style.margin = "8px";
 
+    disc.onclick = function() {
+      if (playerOne == true) {
+        setMessage(`It Is Red Players Turn`)
+        event.target.style.backgroundColor = "red";
+        playerOne = false;
+      } else {
+        setMessage(`It Is Yellow Players Turn`)
+        event.target.style.backgroundColor = "yellow";
+        playerOne = true;
+      }
+    }
+
+    document.getElementById("gamePiece").appendChild(disc);
+  }
+}
 /*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
 const resetBoard = () => {
   grid = [
@@ -64,9 +84,6 @@ const drawBoard = () => {
     row.forEach((cell, coordX) => {
       // and create a table cell element
       let cellElements = document.createElement('td');
-      // storing coordinates for the cells
-      let cellCoordinates = [coordX, coordY];
-      cellElements.className = 'inner-circle';
       // adding cells to rows
       rowElements.appendChild(cellElements);
     });
@@ -75,6 +92,19 @@ const drawBoard = () => {
   });
 };
 
+
+
+// This is a function that adds blue dots on the screen if we can place them *
+/*
+//
+window.addEventListener("click", event => {
+  let dot = document.createElement("div");
+  dot.className = "dot";
+  dot.style.left = (event.pageX - 4) + "px";
+  dot.style.top = (event.pageY - 4) + "px";
+  document.body.appendChild(dot);
+});
+*/
 
 
 //Function for the Win
