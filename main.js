@@ -2,12 +2,22 @@ let grid = []; // making a two dimensional array (x,y)
 // im putting turn in the global scope for my
 // start game function to reference that value
 let turn;
-
+const switchTurn = () => {
+  if (turn == "Player 1") {
+    turn = "Player 2";
+    setMessage("It's " + turn + "'s turn");
+  } else {
+    turn = "Player 1";
+    setMessage("It's " + turn + "'s turn");
+  }
+};
 
 const startGame = () => {
   resetBoard();
   drawBoard();
   start();
+  yellowButton();
+  blueButton();
 };
 // When the window is loaded the functions within the startGame, are ran first
 window.onload = startGame;
@@ -18,6 +28,12 @@ const setMessage = (msg) => {
 };
 
 
+const blueButton = () => {
+  let buttons = document.getElementById('boardColor');
+    boardColor.addEventListener("click", function() {
+      document.querySelector('table').style.background = 'blue';
+     })
+  }
 
 const switchTurn = () => {
   if (turn == "Red") {
@@ -26,9 +42,21 @@ const switchTurn = () => {
     setMessage("It's " + turn + "'s turn");
   } else {
     turn = "Red";
-    setMessage("It's " + turn + "'s turn");
+
+window.addEventListener("load",function() {
+  blueButton();
+});
+
+const yellowButton = () => {
+  let buttons = document.getElementById('backgroundColor');
+    backgroundColor.addEventListener("click", function() {
+      document.querySelector('html').style.background = 'yellow';
+     })
   }
-};
+
+window.addEventListener("load",function() {
+  yellowButton();
+});
 
 
 
@@ -60,6 +88,13 @@ const start = function() {
     document.getElementById("gamePiece").appendChild(disc);
   }
 }
+
+const animation = () => {
+  let Player1 = document.getElementsById("Player1");
+  let Player2 = document.getElementsById("Player2");
+}
+
+
 /*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
 const resetBoard = () => {
   grid = [
@@ -154,6 +189,7 @@ const instructions = () => {
   const popup = document.getElementById("instructionPopup");
   popup.classList.toggle("showInstructions");
 };
+
 /*
 module.exports = {
   checkForWinner,
@@ -161,3 +197,109 @@ module.exports = {
   instructions,
 };
 */
+/*
+const buttonElement = document.selectElementByClassName("fa fa-arrow-down");
+buttonElement.addEventListener('click', {
+  handleEvent: function (event) {
+    alert('Element clicked through handleEvent property!');
+  }
+});
+*/
+
+/*
+const disc = null;
+  const init = () => {
+     imgObj = document.getElementById('chip');
+     imgObj.setAttribute("style", "position:relative; left: '0px;");
+  }
+
+function moveRight(){
+  imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+}
+
+  window.onload =init;
+*/
+//declare dropChip function
+function dropChip() {
+	//grab functions global variables
+	//create new chip to drop
+	let placedChip = document.createElement('div');
+	//create var to hold the amount of spots open in the column
+	let spotsOpen = 0;
+	//put chip together
+	placedChip.classList.add('placed-chip');
+
+	//call place chip funcion and pass it the current td
+	placeChip(this);
+	//call function to change chip
+	changeChip();
+
+	//declare placeChip function
+	function placeChip(cell) {
+		//grab current column
+		let currentColumn = cell.className;
+		//create array to hold each td with the currentColumn
+		let filterArray = [];
+
+		//loop through all td's
+		for(let i = 0; i < td.length; i++) {
+			//if td has column add td to filterArray
+			if(td[i].classList.contains(currentColumn)) {
+				filterArray.push(td[i]);
+			}
+		}
+		//loop through filterArray
+		for(let i = 0; i < filterArray.length; i++) {
+			//create boolean var to see if td in filterArray already has chip
+			let hasChip = filterArray[i].hasChildNodes();
+			//if cell doesn't have div.chip then placeChip
+			if(!hasChip) {
+				//place chip
+				//if the td below td[i] is empty, chip will be blessed in that td
+				filterArray[i].appendChild(placedChip);
+				// increase spotsOpen
+				spotsOpen++;
+			}
+		}
+		//adjust placedChip animation to account for chips already in column
+		switch(spotsOpen) {
+			//6 spots open
+			case 6:
+				placedChip.style.animationName = 'animate';
+				break;
+			//5 spots open
+			case 5:
+				placedChip.style.animationName = 'one-chip';
+				break;
+			//4 spots open
+			case 4:
+				placedChip.style.animationName = 'two-chip';
+				break;
+			case 3:
+				placedChip.style.animationName = 'three-chip';
+				break;
+			case 2:
+				placedChip.style.animationName = 'four-chip';
+				break;
+			case 1:
+				placedChip.style.animationName = 'five-chip';
+				break;
+		}
+	}
+
+
+	//declare changeChip function
+	function changeChip() {
+		//if chip isn't yellow then chip is now yellow
+		if(!chip.classList.contains('yellow')&&!inner.classList.contains('inner-yellow')) {
+			chip.classList.add('yellow');
+			placedChip.classList.remove('yellow');
+		}
+		//else it's red
+		else {
+			chip.classList.remove('yellow');
+			placedChip.classList.add('yellow');
+		}
+	}
+
+}
