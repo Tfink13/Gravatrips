@@ -105,9 +105,11 @@ div#game-info {
 table {
   position: relative;
   width: 840px;
+  left: 400px;
   border-radius: 22px;
   background: blue;
   box-shadow: 0 0 20px 6px lightyellow;
+  margin-bottom: 100px;
 
 }
 
