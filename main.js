@@ -19,16 +19,6 @@ const setMessage = (msg) => {
 
 
 
-const switchTurn = () => {
-  if (turn == "Red") {
-    turn = "Yellow";
-
-    setMessage("It's " + turn + "'s turn");
-  } else {
-    turn = "Red";
-    setMessage("It's " + turn + "'s turn");
-  }
-};
 
 
 
@@ -47,12 +37,12 @@ const start = function() {
 
     disc.onclick = function() {
       if (playerOne == true) {
-        setMessage(`It Is Red Players Turn`)
-        event.target.style.backgroundColor = "red";
+        setMessage(`It Is Black Players Turn`)
+        event.target.style.backgroundColor = "Black";
         playerOne = false;
       } else {
-        setMessage(`It Is Yellow Players Turn`)
-        event.target.style.backgroundColor = "yellow";
+        setMessage(`It Is Red Players Turn`)
+        event.target.style.backgroundColor = "red";
         playerOne = true;
       }
     }
