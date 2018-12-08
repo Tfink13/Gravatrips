@@ -2,6 +2,8 @@ let grid = []; // making a two dimensional array (x,y)
 // im putting turn in the global scope for my
 // start game function to reference that value
 let turn;
+
+let playerOne = true;
 const switchTurn = () => {
   if (turn == "Player 1") {
     turn = "Player 2";
@@ -35,9 +37,18 @@ const blueButton = () => {
      })
   }
 
-const switchTurn = () => {
-  if (turn == "Red") {
-    turn = "Yellow";
+  const yellowButton = () => {
+    let buttons = document.getElementById('backgroundColor');
+      backgroundColor.addEventListener("click", function() {
+        document.querySelector('html').style.background = 'yellow';
+       })
+    }
+
+  window.addEventListener("load",function() {
+    yellowButton();
+    blueButton();
+  });
+
 
     setMessage("It's " + turn + "'s turn");
   } else {
@@ -60,7 +71,6 @@ window.addEventListener("load",function() {
 
 
 
-let playerOne = true;
 
 const start = function() {
   for (let i = 0; i < 42; i++) {
@@ -75,17 +85,17 @@ const start = function() {
 
     disc.onclick = function() {
       if (playerOne == true) {
-        setMessage(`It Is Red Players Turn`)
-        event.target.style.backgroundColor = "red";
+        setMessage(`It Is Black Players Turn`)
+        event.target.style.backgroundColor = "Black";
         playerOne = false;
       } else {
-        setMessage(`It Is Yellow Players Turn`)
-        event.target.style.backgroundColor = "yellow";
+        setMessage(`It Is Red Players Turn`)
+        event.target.style.backgroundColor = "red";
         playerOne = true;
       }
     }
 
-    document.getElementById("gamePiece").appendChild(disc);
+    document.getElementById("gameBoard").appendChild(disc);
   }
 }
 
