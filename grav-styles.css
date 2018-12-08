@@ -151,6 +151,7 @@ div.popup {
 
 
 
+
 /* ALL THE FEATURES THAT WE WERENT ABLE IMPLEMENT :( */
 
 /*
@@ -204,3 +205,50 @@ td {
   padding-right: 10px;
 }
 */
+
+/*
+@keyframes chip-animation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(701px);
+  }
+*/
+/*
+* {
+	box-sizing: border-box;
+	font-family: 'Orbitron';
+	top: 90px;
+	left: -265px;
+	animation-duration: 2.5s;
+}
+body {
+	background-color: darkgrey;
+	transition: all 6s ease;
+}
+
+@keyframes fadeOut {
+	0% {opacity: 1.0;}
+	100% {opacity: 0;}
+}
+
+.intro {
+	position: absolute;
+	transition: all 0.7s ease;
+	left: -265px;
+	top: 90px;
+	animation-duration: 2.3s;
+	animation-fill-mode: forwards;
+	color: black;
+}
+*/
+
+#boardColor, #backgroundColor, #buttonColor {
+  width: 200px;
+  height: 25px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
