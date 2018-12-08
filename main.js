@@ -49,24 +49,13 @@ const blueButton = () => {
     blueButton();
   });
 
-
+/*
     setMessage("It's " + turn + "'s turn");
   } else {
     turn = "Red";
-
+*/
 window.addEventListener("load",function() {
   blueButton();
-});
-
-const yellowButton = () => {
-  let buttons = document.getElementById('backgroundColor');
-    backgroundColor.addEventListener("click", function() {
-      document.querySelector('html').style.background = 'yellow';
-     })
-  }
-
-window.addEventListener("load",function() {
-  yellowButton();
 });
 
 
@@ -85,11 +74,11 @@ const start = function() {
 
     disc.onclick = function() {
       if (playerOne == true) {
-        setMessage(`It Is Black Players Turn`)
+        setMessage(`It Is Red Players Turn`)
         event.target.style.backgroundColor = "Black";
         playerOne = false;
       } else {
-        setMessage(`It Is Red Players Turn`)
+        setMessage(`It Is Balck Players Turn`)
         event.target.style.backgroundColor = "red";
         playerOne = true;
       }
