@@ -11,6 +11,8 @@
 
 <body>
   <section>
+    <button id = "boardColor">Blue Board</button>
+    <button id = "backgroundColor">Yellow Background</button>
 
     <h1>Gravatrips</h1>
     <div class="popup" onclick="instructions()">Click me for Instructions!
@@ -29,47 +31,24 @@
       Message Goes Here
     </div>
     <!-- made an id so that im able to refernce this in js to add rows -->
+
     <table>
-      <thead align="center">
-        <tr>
-          <!-- Set up the buttons that will drop the pieces in to the column.  This could be programmatically generated like
-    the rows/columns below, but since it was just 7, it wouldn't really save code -->
-          <td id="drop">
-            <button class="resizeBtn">
-              <i class="fa fa-arrow-down" aria-hidden="true"></i>
-            </button>
-          </td>
-          <td id="drop">
-            <button class="resizeBtn">
-              <i class="fa fa-arrow-down" aria-hidden="true"></i>
-            </button>
-          </td>
-          <td id="drop">
-            <button class="resizeBtn">
-              <i class="fa fa-arrow-down" aria-hidden="true"></i>
-            </button>
-          </td>
-          <td id="drop">
-            <button class="resizeBtn">
-              <i class="fa fa-arrow-down" aria-hidden="true"></i>
-            </button>
-          </td>
-          <td id="drop">
-            <button class="resizeBtn">
-              <i class="fa fa-arrow-down" aria-hidden="true"></i>
-            </button>
-          </td>
-          <td id="drop">
-            <button class="resizeBtn">
-              <i class="fa fa-arrow-down" aria-hidden="true"></i>
-            </button>
-          </td>
+          <thead align="center">
+            <tr>
+              <!-- Set up the buttons that will drop the pieces in to the column.  This could be programmatically generated like
+        the rows/columns below, but since it was just 7, it wouldn't really save code -->
+              <td id="drop"><button class="resizeBtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td>
+              <td id="drop"><button class="resizeBtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td>
+              <td id="drop"><button class="resizeBtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td>
+              <td id="drop"><button class="resizeBtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td>
+              <td id="drop"><button class="resizeBtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td>
+              <td id="drop"><button class="resizeBtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td>
+              <td id="drop"><button class="resizeBtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td>
+            </tr>
+          </thead>
+        </table>
+      </section>
+      <script type="text/javascript" async src="main.js"> </script>
+    </body>
 
-        </tr>
-      </thead>
-    </table>
-  </section>
-  <script type="text/javascript" defer src="main.js"> </script>
-</body>
-
-</html>
+    </html>

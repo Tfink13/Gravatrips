@@ -103,3 +103,88 @@ div.popup {
   font-family: 'Orbitron', sans-serif;
   padding-right: 80px;
 }
+
+.Player1, .Player2 {
+  font-size: 125px;
+  width: 110px;
+  height: 113px;
+  margin-left: 14px;
+  animation-name: animate;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  z-index: 15;
+  opacity: .9;
+}
+
+@keyframes animate {
+	from {transform: translateY(-600px);}
+	to {transform: translateY(0px);}
+}
+
+@keyframes one-chip {
+	from {transform: translateY(-500px);}
+	to {transform: translateY(0px);}
+}
+
+@keyframes two-chip {
+	from {transform: translateY(-400px);}
+	to {transform: translateY(0px);}
+}
+@keyframes three-chip {
+	from {transform: translateY(-300px);}
+	to {transform: translateY(0px);}
+}
+@keyframes four-chip {
+	from {transform: translateY(-200px);}
+	to {transform: translateY(0px);}
+}
+@keyframes five-chip {
+	from {transform: translateY(-100px);}
+	to {transform: translateY(0px);}
+}
+
+/*
+@keyframes chip-animation {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(701px);
+  }
+*/
+/*
+* {
+	box-sizing: border-box;
+	font-family: 'Orbitron';
+	top: 90px;
+	left: -265px;
+	animation-duration: 2.5s;
+}
+body {
+	background-color: darkgrey;
+	transition: all 6s ease;
+}
+
+@keyframes fadeOut {
+	0% {opacity: 1.0;}
+	100% {opacity: 0;}
+}
+
+.intro {
+	position: absolute;
+	transition: all 0.7s ease;
+	left: -265px;
+	top: 90px;
+	animation-duration: 2.3s;
+	animation-fill-mode: forwards;
+	color: black;
+}
+*/
+
+#boardColor, #backgroundColor, #buttonColor {
+  width: 200px;
+  height: 25px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
