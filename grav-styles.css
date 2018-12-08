@@ -103,12 +103,12 @@ div#game-info {
   font-size: 30px;
 }
 table {
-  width: 53%;
-  margin: auto;
+  position: relative;
+  width: 840px;
   border-radius: 22px;
   background: blue;
   box-shadow: 0 0 20px 6px lightyellow;
-  transform: rotate(90deg);
+
 }
 
 div.popup {

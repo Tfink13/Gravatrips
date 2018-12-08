@@ -3,6 +3,7 @@ let grid = []; // making a two dimensional array (x,y)
 // start game function to reference that value
 let turn;
 
+let playerOne = true;
 
 const startGame = () => {
   resetBoard();
@@ -18,11 +19,27 @@ const setMessage = (msg) => {
 };
 
 
+const blueButton = () => {
+  let buttons = document.getElementById('boardColor');
+    boardColor.addEventListener("click", function() {
+      document.querySelector('table').style.background = 'blue';
+     })
+  }
+  const yellowButton = () => {
+    let buttons = document.getElementById('backgroundColor');
+      backgroundColor.addEventListener("click", function() {
+        document.querySelector('html').style.background = 'yellow';
+       })
+    }
+
+  window.addEventListener("load",function() {
+    yellowButton();
+    blueButton();
+  });
 
 
 
 
-let playerOne = true;
 
 const start = function() {
   for (let i = 0; i < 42; i++) {
@@ -47,7 +64,7 @@ const start = function() {
       }
     }
 
-    document.getElementById("gamePiece").appendChild(disc);
+    document.getElementById("gameBoard").appendChild(disc);
   }
 }
 /*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
