@@ -104,21 +104,46 @@ div.popup {
   padding-right: 80px;
 }
 
-.chip {
+.Player1, .Player2 {
+  font-size: 125px;
   width: 110px;
   height: 113px;
-  background-color: black;
-  border-radius: 50%;
   margin-left: 14px;
-  /*
-  animation-name: chip-animation;
+  animation-name: animate;
   animation-duration: 1000ms;
   animation-fill-mode: both;
   z-index: 15;
   opacity: .9;
-  */
 }
 
+@keyframes animate {
+	from {transform: translateY(-600px);}
+	to {transform: translateY(0px);}
+}
+
+@keyframes one-chip {
+	from {transform: translateY(-500px);}
+	to {transform: translateY(0px);}
+}
+
+@keyframes two-chip {
+	from {transform: translateY(-400px);}
+	to {transform: translateY(0px);}
+}
+@keyframes three-chip {
+	from {transform: translateY(-300px);}
+	to {transform: translateY(0px);}
+}
+@keyframes four-chip {
+	from {transform: translateY(-200px);}
+	to {transform: translateY(0px);}
+}
+@keyframes five-chip {
+	from {transform: translateY(-100px);}
+	to {transform: translateY(0px);}
+}
+
+/*
 @keyframes chip-animation {
   from {
     transform: translateY(0px);
@@ -126,8 +151,8 @@ div.popup {
   to {
     transform: translateY(701px);
   }
-}
-
+*/
+/*
 * {
 	box-sizing: border-box;
 	font-family: 'Orbitron';
@@ -154,65 +179,12 @@ body {
 	animation-fill-mode: forwards;
 	color: black;
 }
-/*
-.chip {
-	margin: 0;
-	padding: 0;
-	position: relative;
-	top: 86px;
-	left: 30px;
-	background-color: red;
-	width: 80px;
-	height: 80px;
-	border-radius: 50%;
-	overflow: hidden;
-	transition: all 0.7s ease;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-}
 */
-@keyframes dropChip {
-	0% {transform: rotateX(360deg);}
-	60% {top: 60px; opacity: 1;}
-	100% {top: 800px; opacity: 0;}
-}
 
-.placed-chip {
-	margin: 0;
-	padding: 0;
-	background-color: red;
-	width: 80px;
-	height: 80px;
-	border-radius: 50%;
-	margin-left: 9px;
-	transition: all 1.7s ease-in;
-	animation-duration: 1.15s;
-	animation-name: animate;
-}
-
-@keyframes animate {
-	from {transform: translateY(-610px);}
-	to {transform: translateY(0px);}
-}
-
-@keyframes one-chip {
-	from {transform: translateY(-510px);}
-	to {transform: translateY(0px);}
-}
-
-@keyframes two-chip {
-	from {transform: translateY(-410px);}
-	to {transform: translateY(0px);}
-}
-@keyframes three-chip {
-	from {transform: translateY(-310px);}
-	to {transform: translateY(0px);}
-}
-@keyframes four-chip {
-	from {transform: translateY(-210px);}
-	to {transform: translateY(0px);}
-}
-@keyframes five-chip {
-	from {transform: translateY(-110px);}
-	to {transform: translateY(0px);}
+#boardColor, #backgroundColor, #buttonColor {
+  width: 200px;
+  height: 25px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
 }

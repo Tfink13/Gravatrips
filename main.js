@@ -2,12 +2,22 @@ let grid = []; // making a two dimensional array (x,y)
 // im putting turn in the global scope for my
 // start game function to reference that value
 let turn;
-
+const switchTurn = () => {
+  if (turn == "Player 1") {
+    turn = "Player 2";
+    setMessage("It's " + turn + "'s turn");
+  } else {
+    turn = "Player 1";
+    setMessage("It's " + turn + "'s turn");
+  }
+};
 
 const startGame = () => {
   firstTurn();
   resetBoard();
   drawBoard();
+  yellowButton();
+  blueButton();
 };
 // When the window is loaded the functions within the startGame, are ran first
 window.onload = startGame;
@@ -25,19 +35,33 @@ const firstTurn = () => {
   setMessage(turn + " get's to start!")
 };
 
-
-const switchTurn = () => {
-  if (turn == "Player 1") {
-    turn = "Player 2";
-    setMessage("It's " + turn + "'s turn");
-  } else {
-    turn = "Player 1";
-    setMessage("It's " + turn + "'s turn");
+const blueButton = () => {
+  let buttons = document.getElementById('boardColor');
+    boardColor.addEventListener("click", function() {
+      document.querySelector('table').style.background = 'blue';
+     })
   }
-};
+
+window.addEventListener("load",function() {
+  blueButton();
+});
+
+const yellowButton = () => {
+  let buttons = document.getElementById('backgroundColor');
+    backgroundColor.addEventListener("click", function() {
+      document.querySelector('html').style.background = 'yellow';
+     })
+  }
+
+window.addEventListener("load",function() {
+  yellowButton();
+});
 
 
-
+const animation = () => {
+  let Player1 = document.getElementsById("Player1");
+  let Player2 = document.getElementsById("Player2");
+}
 
 
 /*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
@@ -140,20 +164,20 @@ buttonElement.addEventListener('click', {
   }
 });
 */
-const eventButton = () => {
-  let buttons = document.getElementsByTagName("button");
-  for (i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function() {
-    alert("you clicked"); });
+
+/*
+const disc = null;
+  const init = () => {
+     imgObj = document.getElementById('chip');
+     imgObj.setAttribute("style", "position:relative; left: '0px;");
   }
+
+function moveRight(){
+  imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
 }
 
-window.addEventListener("load",function() {
-  eventButton();
-});
-
-
-
+  window.onload =init;
+*/
 //declare dropChip function
 function dropChip() {
 	//grab functions global variables
