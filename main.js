@@ -1,3 +1,21 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 let grid = []; // making a two dimensional array (x,y)
 // im putting turn in the global scope for my
 // start game function to reference that value
@@ -69,7 +87,7 @@ const start = () => {
     document.getElementById("gameBoard").appendChild(disc);
   }
 }
-/*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
+/*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME *//*
 const resetBoard = () => {
   grid = [
     [null, null, null, null, null, null, null],
@@ -115,7 +133,7 @@ window.addEventListener("click", event => {
 });
 */
 
-
+/*
 //Function for the Win
 const check = (position1, position2, position3, position4) => {
   return ((position1 != 0) && (position1 == position2) && (position1 == position3) && (position1 == position4));
