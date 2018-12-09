@@ -62,34 +62,6 @@ const clearTable = () => {
 
 window.onload = clearTable();
 
-function checkWinner() {
-  let player;
-  if (active_player == "Black") {
-    player = "Red";
-  } else {
-    player = "Black";
-  }
-  for (let i = 1; i < tablerow.length; i++) {
-    for (let j = 1; j < tablerow[1].length; j++) {
-      if (checkHorizontal(i, j, player)) {
-        alert(player + " Player Wins!!!");
-        return true;
-      } else if (checkVertical(i, j, player)) {
-        alert(player + " Player Wins!!!");
-        return true;
-      } else if (checkDiagonalDown(i, j, player)) {
-        alert(player + " Player Wins!!!");
-        return true;
-      } else if (checkDiagonalUp(i, j, player)) {
-        alert(player + " Player Wins!!!");
-        return true;
-      }
-    }
-
-  }
-  return false;
-}
-
 
 //check for the winning combinations horizontally
 function checkHorizontal(row, column, player) {
@@ -158,6 +130,19 @@ function checkVertical(row, column, player) {
 }
 
 
+
+// When the user clicks on div, open the popup
+const instructions = () => {
+  const popup = document.getElementById("instructionPopup");
+  popup.classList.toggle("showInstructions");
+};
+/*
+module.exports = {
+  checkForWinner,
+  check,
+  instructions,
+};
+*/
 
 
 
@@ -326,15 +311,4 @@ const checkForWinner = (win) => {
   //If there is no winner yet it will just be 0 until there is a winner
 };
 
-// When the user clicks on div, open the popup
-const instructions = () => {
-  const popup = document.getElementById("instructionPopup");
-  popup.classList.toggle("showInstructions");
-};
-/*
-module.exports = {
-  checkForWinner,
-  check,
-  instructions,
-};
 */
