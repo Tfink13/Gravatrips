@@ -26,11 +26,12 @@ const blueButton = () => {
      })
   }
   const yellowButton = () => {
-    let buttons = document.getElementById('backgroundColor');
+     buttons = document.getElementById('backgroundColor');
       backgroundColor.addEventListener("click", function() {
         document.querySelector('html').style.background = 'yellow';
        })
     }
+
 
   window.addEventListener("load",function() {
     yellowButton();
@@ -41,7 +42,7 @@ const blueButton = () => {
 
 
 
-const start = function() {
+const start = () => {
   for (let i = 0; i < 42; i++) {
     const disc = document.createElement("div");
     disc.className = 'spacing'
@@ -52,7 +53,8 @@ const start = function() {
     disc.style.borderRadius = "100%";
     disc.style.margin = "8px";
 
-    disc.onclick = function() {
+
+    disc.onclick = () => {
       if (playerOne == true) {
         setMessage(`It Is Black Players Turn`)
         event.target.style.backgroundColor = "Black";
