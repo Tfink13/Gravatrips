@@ -1,53 +1,43 @@
-
 body {
-  padding: 1em 3em;
-  background: white;
   text-align: center;
-  width: 700px;
 }
 
-
-
-
-.column{
-    width: 70px;
-    background-color: #87CEEB;
-    float:left;
+.column {
+  width: 70px;
+  float: left;
 }
 
-.col{
-    border-radius:100%;
-    width:50px;
-    height: 50px;
-    border: solid black;
-    clear:both;
-    background-color: beige;
-
+.col {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  border: solid black;
+  clear: both;
+  background-color: beige;
 }
-
 
 .playerColor_Red {
   background: red;
- border: solid black;
+  border: solid black;
   margin: 0px;
-  color:  red;
+  color: red;
 }
 
 .playerColor_Black {
   background: black;
   border: solid black;
   margin: 0px;
- color: black;
+  color: black;
 }
 
-.button{
-    clear: both;
-    text-align: left;
+.button {
+  clear: both;
+  text-align: left;
   padding: 20px 0px 0px 0px;
 }
+
 html {
-  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-  border: 10px solid black;
+  background: #1fc8db 51%;
 }
 
 h1 {
@@ -56,29 +46,6 @@ h1 {
   font-size: 40pt;
   padding: 5px;
 }
-
-div#message {
-  text-align: center;
-  font-size: 30pt;
-  font-family: 'Bungee', cursive;
-  padding-bottom: 20px;
-}
-
-div#game-info {
-  text-align: center;
-  font-size: 30px;
-}
-table {
-  position: relative;
-  width: 840px;
-  left: 400px;
-  border-radius: 22px;
-  background: blue;
-  box-shadow: 0 0 20px 6px lightyellow;
-  margin-bottom: 100px;
-
-}
-
 
 div.popup {
   position: absolute;
@@ -104,10 +71,8 @@ div.popup {
 .popup .showInstructions {
   visibility: visible;
   font-size: 26px;
-  top: 35px;
-  border-radius: 45px;
+  left: -15px;
   font-family: 'Orbitron', sans-serif;
-  padding-right: 80px;
 }
 
 #boardColor, #backgroundColor, #buttonColor {
@@ -117,59 +82,3 @@ div.popup {
   color: white;
   border-radius: 5px;
 }
-
-
-
-/* ALL THE FEATURES THAT WE WERENT ABLE IMPLEMENT :( */
-
-/*
-.dot {
-  height: 120px;
-  width: 115px;
-  border-radius: 50%;
-  background: blue;
-  position: absolute;
-}
-*/
-
-/* All the styleing for the button in table head
-button.resizeBtn {
-  border-radius: 50%;
-  outline: none;
-  padding: 15px 25px;
-  font-size: 10px;
-  cursor: pointer;
-  color: #fff;
-  background-color: #000080;
-
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-
-button:hover {
-  background-color: #AFEEEE
-}
-
-button:active {
-  background-color: #AFEEEE;
-  box-shadow: 0 5px #666;
-  transform: translateY(2px);
-}
-
-*/
-/*
-table tr td.inner-circle {
-  height: 115px;
-  border: 1px solid black;
-  border-radius: 50%;
-  background-color: white;
-}
-*/
-/* this where thcolors of the players will be
-td {
-  padding: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-*/
