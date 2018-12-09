@@ -1,3 +1,28 @@
+let gameActive = false; // I want the game to not be active untill someone clicks the board
+let active_player = "rojo";
+let tablerow;
+
+// Function that is checking the game status, and changing between Players
+
+const gameStatus = (column) => {
+
+      for (let i = tablerow[column].length - 1; i > 0; i--) {
+
+          if (tablerow[column][i].innerHTML == "") {
+
+              tablerow[column][i].innerHTML = active_player;
+              tablerow[column][i].className += "playerColor_" + active_player;
+              if (active_player == "black") {
+                  active_player = "red";
+              } else {
+                  active_player = "black";
+              }
+              break;
+          }
+
+      }
+
+  }
 
 
 
