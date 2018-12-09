@@ -110,6 +110,22 @@ const checkHorizontal = (row, column, player) => {
 }
 
 
+//Checking for the vertical combinations
+const checkVertical = (row, column, player) => {
+    let winCombination = 0;
+    for (let i = row; i < tablerow.length; i++) {
+        if (tablerow[i][column].innerHTML == player) {
+            winCombination++;
+        } else {
+            winCombination = 0;
+        }
+        if (winCombination == 4) {
+            return true;
+        }
+    }
+    return false;
+}
+
 //Checking for the diagonals
 const checkDiagonalDown = (row, column, player) => {
   let k;
@@ -145,21 +161,6 @@ const checkDiagonalUp = (row, column, player) => {
   return false;
 }
 
-//Checking for the vertical combinations
-const checkVertical = (row, column, player) => {
-    let winCombination = 0;
-    for (let i = row; i < tablerow.length; i++) {
-        if (tablerow[i][column].innerHTML == player) {
-            winCombination++;
-        } else {
-            winCombination = 0;
-        }
-        if (winCombination == 4) {
-            return true;
-        }
-    }
-    return false;
-}
 
 
 // When the user clicks on div, open the popup
@@ -167,7 +168,28 @@ const instructions = () => {
   const popup = document.getElementById("instructionPopup");
   popup.classList.toggle("showInstructions");
 };
-/*
+
+
+const blueButton = () => {
+  let buttons = document.getElementById('resetChange');
+    boardColor.addEventListener("click", function() {
+      document.getElementById('resetChange').style.background = 'lightblue';
+     })
+  }
+  const yellowButton = () => {
+     buttons = document.getElementById('backgroundColor');
+      backgroundColor.addEventListener("click", function() {
+        document.querySelector('html').style.background = 'lightyellow';
+       })
+    }
+
+
+  window.addEventListener("load",function() {
+    yellowButton();
+    blueButton();
+  });
+
+
 module.exports = {
   checkForWinner,
   check,
@@ -201,25 +223,6 @@ const setMessage = (msg) => {
   document.getElementById('message').innerText = msg;
 };
 
-
-const blueButton = () => {
-  let buttons = document.getElementById('boardColor');
-    boardColor.addEventListener("click", function() {
-      document.querySelector('table').style.background = 'blue';
-     })
-  }
-  const yellowButton = () => {
-     buttons = document.getElementById('backgroundColor');
-      backgroundColor.addEventListener("click", function() {
-        document.querySelector('html').style.background = 'yellow';
-       })
-    }
-
-
-  window.addEventListener("load",function() {
-    yellowButton();
-    blueButton();
-  });
 
 
 

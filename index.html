@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <button id="boardColor">Blue Board</button>
+  <button id="boardColor">Blue Reset Button</button>
   <button id="backgroundColor">Yellow Background</button>
 
   <h1>Gravatrips</h1>
@@ -26,9 +26,11 @@
     </span>
   </div>
 
+<section>
+    <div id='table'></div>
+</section>
 
-  <div id='table'></div>
-  <div class='button'><button onclick='clearTable()'>Resart</button></div>
+  <div class='button'><button id="resetChange" class="reset" onclick='clearTable()'>Reset Game</button></div>
 
 
 
@@ -37,72 +39,3 @@
 </body>
 
 </html>
-<!--
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-
-
-  <section>
-    <button id="boardColor">Blue Board</button>
-    <button id="backgroundColor">Yellow Background</button>
-
-    <h1>Gravatrips</h1>
-    <div class="popup" onclick="instructions()">Click me for Instructions!
-      <span class="popuptext" id="instructionPopup">
-        The board consists of 6 rows and 7 columns and 42 total spaces on the board.
-        <br><br>
-        Each player has at most 21 possible turns to try to win, draw or lose.
-        <br><br>
-        You can click the board to place your piece in the column you wish to place it in.
-        <br><br>
-        If you get 4 consecutive in a row, column or in a diagonal you win the game. If this does not happen, the game will end up being a tie.
-      </span>
-    </div>
-
-    <div id="message">
-      Red Player Gets To Start
-    </div>
-
-    <table id="gameBoard">
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-
-    </table>
-
-  </section>
-
-</body>
-
-</html>
--->
