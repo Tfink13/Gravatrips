@@ -1,36 +1,59 @@
 let gameActive = false; // I want the game to not be active untill someone clicks the board
-let active_player = "rojo";
+let active_player = "red";
 let tablerow;
+
+
+window.onload = clearTable(); //  when the window is loaded i want the newTable to display
 
 // Function that is checking the game status, and changing between Players
 
 const gameStatus = (column) => {
 
-      for (let i = tablerow[column].length - 1; i > 0; i--) {
+  for (let i = tablerow[column].length - 1; i > 0; i--) {
 
-          if (tablerow[column][i].innerHTML == "") {
+    if (tablerow[column][i].innerHTML == "") {
 
-              tablerow[column][i].innerHTML = active_player;
-              tablerow[column][i].className += "playerColor_" + active_player;
-              if (active_player == "black") {
-                  active_player = "red";
-              } else {
-                  active_player = "black";
-              }
-              break;
-          }
-
+      tablerow[column][i].innerHTML = active_player;
+      tablerow[column][i].className += " playerColor_" + active_player;
+      if (active_player == "black") {
+        active_player = "red";
+      } else {
+        active_player = "black";
       }
+      break;
+    }
 
   }
 
+}
+
+// Creating a function that is generating and clearing the board. Im using this function when the window is loaded
+function clearTable() {
+
+  tablerow = [];
+  let newTable = "";
+
+  for (let i = 1; i <= 7; i++) {
+    newTable += "<div id='column" + i + "' class='column' onclick='jugar(" + i + ")'>";
+    tablerow[i] = new Array();
+    for (let j = 1; j <= 6; j++) {
+      newTable += "<div id='pos" + i + "-" + j + "' class='col'></div>";
+      tablerow[i][j] = document.getElementById("pos" + i + "-" + j);
+    }
+    newTable += "<div></div></div>";
+  }
+  document.getElementById("table").innerHTML = newTable;
+  for (let i = 1; i <= 7; i++) {
+
+    tablerow[i] = new Array();
+    for (let j = 1; j <= 6; j++) {
+      tablerow[i][j] = document.getElementById("pos" + i + "-" + j);
+    }
+  }
+}
 
 
-
-
-
-
-
+// Going to write my functions
 
 
 
@@ -112,7 +135,8 @@ const start = () => {
     document.getElementById("gameBoard").appendChild(disc);
   }
 }
-/*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME *//*
+/*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
+/*
 const resetBoard = () => {
   grid = [
     [null, null, null, null, null, null, null],
