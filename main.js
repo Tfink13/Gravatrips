@@ -1,8 +1,7 @@
-
 let gameActive = false; // I want the game to not be active untill someone clicks the board
 let active_player = "Red";
 let tablerow;
-window.onload = clearTable();
+
 
 
 
@@ -10,142 +9,153 @@ window.onload = clearTable();
 // Function that is checking the game status, and changing between Players
 const gameStatus = (column) => {
 
-      for (let i = tablerow[column].length - 1; i > 0; i--) {
+  for (let i = tablerow[column].length - 1; i > 0; i--) {
 
-          if (tablerow[column][i].innerHTML == "") {
+    if (tablerow[column][i].innerHTML == "") {
 
-              tablerow[column][i].innerHTML = active_player;
-              tablerow[column][i].className += " playerColor_" + active_player;
-              if (active_player == "Black") {
-                  active_player = "Red";
-              } else {
-                  active_player = "Black";
-              }
-              break;
-          }
+      tablerow[column][i].innerHTML = active_player;
+      tablerow[column][i].className += " playerColor_" + active_player;
+      if (active_player == "Black") {
+        active_player = "Red";
+      } else {
+        active_player = "Black";
       }
+      break;
+    }
   }
+}
+
+const timer = (column) => {
+  gameStatus(column);
+  if (checkWinner()) {
+    window.setTimeout(clearTable, 1000);
+    // crearTabla();
+  } else if (staleMate()) {
+    alert("Stalemate");
+    window.setTimeout(clearTable, 500);
+  }
+}
 
 
 // created a function that will reset the board when the window is loaded and also clear the contents(color)
-        function clearTable() {
-            tablerow = [];
-            let newTable = "";
-            for (let i = 1; i <= 7; i++) {
-                newTable += "<div id='column" + i + "' class='column' onclick='timer("+i+")'>";
-                tablerow[i] = new Array();
-                for (let j = 1; j <= 6; j++) {
-                    newTable += "<div id='pos" + i + "-" + j + "' class='col'></div>";
-                    tablerow[i][j] = document.getElementById("pos" + i + "-" + j);
-                }
-             newTable += "<div></div></div>";
-            }
-            document.getElementById("table").innerHTML = newTable;
-            for (let i = 1; i <= 7; i++) {
-                tablerow[i] = new Array();
-                for (let j = 1; j <= 6; j++) {
+const clearTable = () => {
+  tablerow = [];
+  let newTable = "";
+  for (let i = 1; i <= 7; i++) {
+    newTable += "<div id='column" + i + "' class='column' onclick='timer(" + i + ")'>";
+    tablerow[i] = new Array();
+    for (let j = 1; j <= 6; j++) {
+      newTable += "<div id='pos" + i + "-" + j + "' class='col'></div>";
+      tablerow[i][j] = document.getElementById("pos" + i + "-" + j);
+    }
+    newTable += "<div></div></div>";
+  }
+  document.getElementById("table").innerHTML = newTable;
+  for (let i = 1; i <= 7; i++) {
+    tablerow[i] = new Array();
+    for (let j = 1; j <= 6; j++) {
 
-                    tablerow[i][j] = document.getElementById("pos" + i + "-" + j);
-                }
-            }
-        }
+      tablerow[i][j] = document.getElementById("pos" + i + "-" + j);
+    }
+  }
+}
 
+window.onload = clearTable();
 
+function checkWinner() {
+  let player;
+  if (active_player == "Black") {
+    player = "Red";
+  } else {
+    player = "Black";
+  }
+  for (let i = 1; i < tablerow.length; i++) {
+    for (let j = 1; j < tablerow[1].length; j++) {
+      if (checkHorizontal(i, j, player)) {
+        alert(player + " Player Wins!!!");
+        return true;
+      } else if (checkVertical(i, j, player)) {
+        alert(player + " Player Wins!!!");
+        return true;
+      } else if (checkDiagonalDown(i, j, player)) {
+        alert(player + " Player Wins!!!");
+        return true;
+      } else if (checkDiagonalUp(i, j, player)) {
+        alert(player + " Player Wins!!!");
+        return true;
+      }
+    }
 
-        function checkWinner() {
-            let player;
-            if (active_player == "Black") {
-                player = "Red";
-            } else {
-                player = "Black";
-            }
-            for (let i = 1; i < tablerow.length; i++) {
-                for (let j = 1; j < tablerow[1].length; j++) {
-                    if (checkHorizontal(i, j, player)) {
-                      alert(player + " Player Wins!!!");
-                        return true;
-                    } else if (checkVertical(i, j, player)) {
-                       alert(player + " Player Wins!!!");
-                        return true;
-                    } else if (checkDiagonalDown(i, j, player)) {
-                       alert(player + " Player Wins!!!");
-                        return true;
-                    } else if (checkDiagonalUp(i, j, player)) {
-                       alert(player + " Player Wins!!!");
-                        return true;
-                    }
-                }
-
-            }
-            return false;
-        }
-
-
-        //check for the winning combinations horizontally
-        function checkHorizontal(row, column, player) {
-            let winCombination = 0;
-            for (let i = column; i < tablerow[1].length; i++) {
-                if (tablerow[row][i].innerHTML == player) {
-                    winCombination++;
-                } else {
-                    winCombination = 0;
-                }
-                if (winCombination == 4) {
-                    return true;
-                }
-            }
-            return false;
-        }
+  }
+  return false;
+}
 
 
-        //Checking for the diagonals
-        function checkDiagonalDown(row, column, player) {
-            let k;
-            let winCombination = 0;
-            for (let i = row, k = column; i < tablerow.length && k < tablerow[1].length; i++, k++) {
-                if (tablerow[i][k].innerHTML == player) {
-                    winCombination++;
-                } else {
-                    winCombination = 0;
-                }
-                if (winCombination == 4) {
-                    return true;
-                }
-            }
-            return false;
-        }
+//check for the winning combinations horizontally
+function checkHorizontal(row, column, player) {
+  let winCombination = 0;
+  for (let i = column; i < tablerow[1].length; i++) {
+    if (tablerow[row][i].innerHTML == player) {
+      winCombination++;
+    } else {
+      winCombination = 0;
+    }
+    if (winCombination == 4) {
+      return true;
+    }
+  }
+  return false;
+}
 
-        function checkDiagonalUp(row, column, player) {
-            let k;
-            let winCombination = 0;
-            for (let i = row, k = column; i > 0 && k < tablerow[1].length; i--, k++) {
-                if (tablerow[i][k].innerHTML == player) {
-                    winCombination++;
-                } else {
-                    winCombination = 0;
-                }
-                if (winCombination == 4) {
-                    return true;
-                }
-            }
-            return false;
-        }
 
-        //Checking for the vertical combinations
-        function checkVertical(row, column, player) {
-            let winCombination = 0;
-            for (let i = row; i < tablerow.length; i++) {
-                if (tablerow[i][column].innerHTML == player) {
-                    winCombination++;
-                } else {
-                    winCombination = 0;
-                }
-                if (winCombination == 4) {
-                    return true;
-                }
-            }
-            return false;
-          }
+//Checking for the diagonals
+function checkDiagonalDown(row, column, player) {
+  let k;
+  let winCombination = 0;
+  for (let i = row, k = column; i < tablerow.length && k < tablerow[1].length; i++, k++) {
+    if (tablerow[i][k].innerHTML == player) {
+      winCombination++;
+    } else {
+      winCombination = 0;
+    }
+    if (winCombination == 4) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function checkDiagonalUp(row, column, player) {
+  let k;
+  let winCombination = 0;
+  for (let i = row, k = column; i > 0 && k < tablerow[1].length; i--, k++) {
+    if (tablerow[i][k].innerHTML == player) {
+      winCombination++;
+    } else {
+      winCombination = 0;
+    }
+    if (winCombination == 4) {
+      return true;
+    }
+  }
+  return false;
+}
+
+//Checking for the vertical combinations
+function checkVertical(row, column, player) {
+  let winCombination = 0;
+  for (let i = row; i < tablerow.length; i++) {
+    if (tablerow[i][column].innerHTML == player) {
+      winCombination++;
+    } else {
+      winCombination = 0;
+    }
+    if (winCombination == 4) {
+      return true;
+    }
+  }
+  return false;
+}
 
 
 
