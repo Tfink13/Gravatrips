@@ -132,7 +132,7 @@ div.button {
   background: blue;
   position: absolute;
 }
-
+*/
 button.reset {
   background: none;
   border: none;
@@ -141,7 +141,7 @@ button.reset {
   font-size: 40px;
   border-radius: 15px;
 }
-*/
+
 
 /*
 @keyframes chip-animation {
