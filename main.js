@@ -195,7 +195,7 @@ module.exports = {
   check,
   instructions,
 };
-*/
+
 
 
 
