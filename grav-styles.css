@@ -1,87 +1,49 @@
-/*
-* {
-  box-sizing: border-box;
-}
-
-
-html {
-  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-  border: 10px solid black;
-}
-
-h1 {
-  font-family: 'Bungee Shade', cursive;
+body {
   text-align: center;
-  font-size: 40pt;
-  padding: 5px;
 }
 
-div#message {
-  text-align: center;
-  font-size: 30pt;
-  font-family: 'Bungee', cursive;
-  padding-bottom: 20px;
+section {
+  display: flex;
+  justify-content: center;
 }
 
-div#game-info {
-  text-align: center;
-  font-size: 30px;
-}
-table {
-  width: 53%;
-  margin: auto;
-  border-radius: 22px;
-  background: blue;
-  box-shadow: 0 0 20px 6px lightyellow;
-  transform: rotate(90deg);
-}
-
-div.popup {
-  position: absolute;
-  display: inline;
-  top: 60px;
-  left: 15px;
+.column {
+  width: 70px;
+  float: left;
   cursor: pointer;
-  font-size: 26pt;
-  opacity: 0.8;
-  border: 5px double #000080;
-  border-radius: 8px;
-  text-shadow: 0 0 .1px black;
 }
 
-.popuptext {
-  visibility: hidden;
-  width: 360px;
-  color: #000;
-  padding: 15px;
-  position: absolute;
+.col {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  border: solid black;
+  clear: both;
+  background-color: beige;
 }
 
-.popup .showInstructions {
-  visibility: visible;
-  font-size: 26px;
-  top: 35px;
-  border-radius: 45px;
-  font-family: 'Orbitron', sans-serif;
-  padding-right: 80px;
-}
-*/
-
-* {
-  box-sizing: border-box;
+.playerColor_Red {
+  background: red;
+  border: solid black;
+  margin: 0px;
+  color: red;
 }
 
-#red-disk {
-  background-color: red;
+.playerColor_Black {
+  background: black;
+  border: solid black;
+  margin: 0px;
+  color: black;
 }
 
-#yellow-disk {
-  background-color: yellow;
+.button {
+  clear: both;
+  text-align: left;
+  padding: 20px 0px 0px 0px;
 }
 
 html {
-  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-  border: 10px solid black;
+  background: #1fc8db 51%;
 }
 
 h1 {
@@ -90,6 +52,8 @@ h1 {
   font-size: 40pt;
   padding: 5px;
 }
+
+
 
 div#message {
   text-align: center;
@@ -113,13 +77,14 @@ table {
 
 }
 
+
 div.popup {
   position: absolute;
   display: inline;
   top: 60px;
   left: 15px;
   cursor: pointer;
-  font-size: 26pt;
+  font-size: 22pt;
   opacity: 0.8;
   border: 5px double #000080;
   border-radius: 8px;
@@ -128,7 +93,6 @@ div.popup {
 
 .popuptext {
   visibility: hidden;
-  width: 360px;
   color: #000;
   padding: 15px;
   position: absolute;
@@ -137,21 +101,25 @@ div.popup {
 .popup .showInstructions {
   visibility: visible;
   font-size: 26px;
-  top: 35px;
-  border-radius: 45px;
+  left: -15px;
   font-family: 'Orbitron', sans-serif;
-  padding-right: 80px;
 }
 
 #boardColor, #backgroundColor, #buttonColor {
-  width: 200px;
+  width: 10%;
+  margin-top: 25px;
   height: 25px;
   background-color: black;
   color: white;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 
+div.button {
+  text-align: center;
+  margin: auto;
+}
 
 
 /* ALL THE FEATURES THAT WE WERENT ABLE IMPLEMENT :( */
@@ -164,47 +132,14 @@ div.popup {
   background: blue;
   position: absolute;
 }
-*/
 
-/* All the styleing for the button in table head
-button.resizeBtn {
-  border-radius: 50%;
-  outline: none;
-  padding: 15px 25px;
-  font-size: 10px;
-  cursor: pointer;
-  color: #fff;
-  background-color: #000080;
-
+button.reset {
+  background: none;
   border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 40px;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-
-button:hover {
-  background-color: #AFEEEE
-}
-
-button:active {
-  background-color: #AFEEEE;
-  box-shadow: 0 5px #666;
-  transform: translateY(2px);
-}
-
-*/
-/*
-table tr td.inner-circle {
-  height: 115px;
-  border: 1px solid black;
-  border-radius: 50%;
-  background-color: white;
-}
-*/
-/* this where thcolors of the players will be
-td {
-  padding: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 */
 

@@ -1,3 +1,208 @@
+let gameActive = false; // I want the game to not be active untill someone clicks the board
+let active_player = "Red";
+let tablerow;
+
+
+
+
+
+// Function that is checking the game status, and changing between Players
+const gameStatus = (column) => {
+
+  for (let i = tablerow[column].length - 1; i > 0; i--) {
+
+    if (tablerow[column][i].innerHTML == "") {
+
+      tablerow[column][i].innerHTML = active_player;
+      tablerow[column][i].className += " playerColor_" + active_player;
+      if (active_player == "Black") {
+        active_player = "Red";
+      } else {
+        active_player = "Black";
+      }
+      break;
+    }
+  }
+}
+
+const timer = (column) => {
+  gameStatus(column);
+  if (checkWinner()) {
+    window.setTimeout(clearTable, 1000);
+    // crearTabla();
+  } else if (staleMate()) {
+    alert("Stalemate");
+    window.setTimeout(clearTable, 500);
+  }
+}
+
+
+// created a function that will reset the board when the window is loaded and also clear the contents(color)
+const clearTable = () => {
+  tablerow = [];
+  let newTable = "";
+  for (let i = 1; i <= 7; i++) {
+    newTable += "<div id='column" + i + "' class='column' onclick='timer(" + i + ")'>";
+    tablerow[i] = new Array();
+    for (let j = 1; j <= 6; j++) {
+      newTable += "<div id='pos" + i + "-" + j + "' class='col'></div>";
+      tablerow[i][j] = document.getElementById("pos" + i + "-" + j);
+    }
+    newTable += "<div></div></div>";
+  }
+  document.getElementById("table").innerHTML = newTable;
+  for (let i = 1; i <= 7; i++) {
+    tablerow[i] = new Array();
+    for (let j = 1; j <= 6; j++) {
+
+      tablerow[i][j] = document.getElementById("pos" + i + "-" + j);
+    }
+  }
+}
+
+window.onload = clearTable();
+
+// Creating my check for win function and passing my other horizontal and vertical checks
+const checkWinner = () => {
+  let player;
+  if (active_player == "Black") {
+    player = "Red";
+  } else {
+    player = "Black";
+  }
+  for (let i = 1; i < tablerow.length; i++) {
+    for (let j = 1; j < tablerow[1].length; j++) {
+      if (checkHorizontal(i, j, player)) {
+        alert(player + " Player Wins!!!");
+        return true;
+      } else if (checkVertical(i, j, player)) {
+        alert(player + " Player Wins!!!");
+        return true;
+      } else if (checkDiagonalDown(i, j, player)) {
+        alert(player + " Player Wins!!!");
+        return true;
+      } else if (checkDiagonalUp(i, j, player)) {
+        alert(player + " Player Wins!!!");
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+
+
+
+//check for the winning combinations horizontally
+const checkHorizontal = (row, column, player) => {
+  let winCombination = 0;
+  for (let i = column; i < tablerow[1].length; i++) {
+    if (tablerow[row][i].innerHTML == player) {
+      winCombination++;
+    } else {
+      winCombination = 0;
+    }
+    if (winCombination == 4) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+//Checking for the vertical combinations
+const checkVertical = (row, column, player) => {
+    let winCombination = 0;
+    for (let i = row; i < tablerow.length; i++) {
+        if (tablerow[i][column].innerHTML == player) {
+            winCombination++;
+        } else {
+            winCombination = 0;
+        }
+        if (winCombination == 4) {
+            return true;
+        }
+    }
+    return false;
+}
+
+//Checking for the diagonals
+const checkDiagonalDown = (row, column, player) => {
+  let k;
+  let winCombination = 0;
+  for (let i = row, k = column; i < tablerow.length && k < tablerow[1].length; i++, k++) {
+    if (tablerow[i][k].innerHTML == player) {
+      winCombination++;
+    } else {
+      winCombination = 0;
+    }
+    if (winCombination == 4) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+const checkDiagonalUp = (row, column, player) => {
+  let k;
+  let winCombination = 0;
+  for (let i = row, k = column; i > 0 && k < tablerow[1].length; i--, k++) {
+
+    if (tablerow[i][k].innerHTML == player) {
+      winCombination++;
+    } else {
+      winCombination = 0;
+    }
+    if (winCombination == 4) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+
+// When the user clicks on div, open the popup
+const instructions = () => {
+  const popup = document.getElementById("instructionPopup");
+  popup.classList.toggle("showInstructions");
+};
+
+
+const blueButton = () => {
+  let buttons = document.getElementById('resetChange');
+    boardColor.addEventListener("click", function() {
+      document.getElementById('resetChange').style.background = 'lightblue';
+     })
+  }
+  const yellowButton = () => {
+     buttons = document.getElementById('backgroundColor');
+      backgroundColor.addEventListener("click", function() {
+        document.querySelector('html').style.background = 'lightyellow';
+       })
+    }
+
+
+  window.addEventListener("load",function() {
+    yellowButton();
+    blueButton();
+  });
+
+
+module.exports = {
+  checkForWinner,
+  check,
+  instructions,
+};
+*/
+
+
+
+
+
+
+/*
 let grid = []; // making a two dimensional array (x,y)
 // im putting turn in the global scope for my
 // start game function to reference that value
@@ -61,7 +266,7 @@ window.addEventListener("load",function() {
 
 
 
-const start = function() {
+const start = () => {
   for (let i = 0; i < 42; i++) {
     const disc = document.createElement("div");
     disc.className = 'spacing'
@@ -72,7 +277,8 @@ const start = function() {
     disc.style.borderRadius = "100%";
     disc.style.margin = "8px";
 
-    disc.onclick = function() {
+
+    disc.onclick = () => {
       if (playerOne == true) {
         setMessage(`It Is Red Players Turn`)
         event.target.style.backgroundColor = "Black";
@@ -95,6 +301,7 @@ const animation = () => {
 
 
 /*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
+/*
 const resetBoard = () => {
   grid = [
     [null, null, null, null, null, null, null],
@@ -140,7 +347,7 @@ window.addEventListener("click", event => {
 });
 */
 
-
+/*
 //Function for the Win
 const check = (position1, position2, position3, position4) => {
   return ((position1 != 0) && (position1 == position2) && (position1 == position3) && (position1 == position4));
