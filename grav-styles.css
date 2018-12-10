@@ -53,31 +53,6 @@ h1 {
   padding: 5px;
 }
 
-
-
-div#message {
-  text-align: center;
-  font-size: 30pt;
-  font-family: 'Bungee', cursive;
-  padding-bottom: 20px;
-}
-
-div#game-info {
-  text-align: center;
-  font-size: 30px;
-}
-table {
-  position: relative;
-  width: 840px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 22px;
-  background: blue;
-  box-shadow: 0 0 20px 6px lightyellow;
-
-}
-
-
 div.popup {
   position: absolute;
   display: inline;
@@ -115,24 +90,11 @@ div.popup {
   cursor: pointer;
 }
 
-
 div.button {
   text-align: center;
   margin: auto;
 }
 
-
-/* ALL THE FEATURES THAT WE WERENT ABLE IMPLEMENT :( */
-
-/*
-.dot {
-  height: 120px;
-  width: 115px;
-  border-radius: 50%;
-  background: blue;
-  position: absolute;
-}
-*/
 button.reset {
   background: none;
   border: none;
@@ -180,7 +142,7 @@ body {
 	color: black;
 }
 */
-
+/*
 #boardColor, #backgroundColor, #buttonColor {
   width: 200px;
   height: 25px;
@@ -188,3 +150,4 @@ body {
   color: white;
   border-radius: 5px;
 }
+*/
