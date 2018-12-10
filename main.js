@@ -200,8 +200,7 @@ module.exports = {
 
 
 
-
-
+/* THIS IS THE FIRST METHOD WE WERE TRYING TO USE TO GET OUR GAME TO WORK*/
 /*
 let grid = []; // making a two dimensional array (x,y)
 // im putting turn in the global scope for my
@@ -254,11 +253,11 @@ const blueButton = () => {
     blueButton();
   });
 
-/*
+
     setMessage("It's " + turn + "'s turn");
   } else {
     turn = "Red";
-*/
+
 window.addEventListener("load",function() {
   blueButton();
 });
@@ -299,7 +298,7 @@ const animation = () => {
   let Player2 = document.getElementsById("Player2");
 }
 
-
+/* THIS IS THE SECOND METHOD WE WERE TRYING TO USE TO GET OUR GAME TO WORK*/
 /*  MAKING A BOARD DEFAULT WHERE THE VALUES ARE NULL, TO REPRESENT A FRESH GAME */
 /*
 const resetBoard = () => {
@@ -335,9 +334,8 @@ const drawBoard = () => {
 
 
 
-// This is a function that adds blue dots on the screen if we can place them *
-/*
-//
+// This is a function that adds blue dots on the screen if we can place them 
+
 window.addEventListener("click", event => {
   let dot = document.createElement("div");
   dot.className = "dot";
@@ -345,9 +343,9 @@ window.addEventListener("click", event => {
   dot.style.top = (event.pageY - 4) + "px";
   document.body.appendChild(dot);
 });
-*/
 
-/*
+
+
 //Function for the Win
 const check = (position1, position2, position3, position4) => {
   return ((position1 != 0) && (position1 == position2) && (position1 == position3) && (position1 == position4));
@@ -396,21 +394,22 @@ const instructions = () => {
   popup.classList.toggle("showInstructions");
 };
 
-/*
+
 module.exports = {
   checkForWinner,
   check,
   instructions,
 };
-*/
-/*
+
+
+
 const buttonElement = document.selectElementByClassName("fa fa-arrow-down");
 buttonElement.addEventListener('click', {
   handleEvent: function (event) {
     alert('Element clicked through handleEvent property!');
   }
 });
-*/
+
 
 /*
 const disc = null;
@@ -424,7 +423,7 @@ function moveRight(){
 }
 
   window.onload =init;
-*/
+
 //declare dropChip function
 function dropChip() {
 	//grab functions global variables
@@ -509,3 +508,4 @@ function dropChip() {
 	}
 
 }
+*/
